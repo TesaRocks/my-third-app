@@ -1,1 +1,31 @@
-<p>shopping-edit works!</p>
+<form>
+  <div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="inputPassword6" class="col-form-label">Name</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" id="inputPassword6" class="form-control" #nameInput />
+    </div>
+    <div class="col-auto"></div>
+    <div class="col-auto">
+      <label for="inputPassword6" class="col-form-label">Amount</label>
+    </div>
+    <div class="col-1">
+      <input
+        type="number"
+        id="inputPassword6"
+        class="form-control"
+        #amountInput
+      />
+    </div>
+
+    <div class="col-auto"></div>
+  </div>
+  <div class="example-button-row" style="margin-left: 20px; margin-top: 20px">
+    <button mat-raised-button color="primary" type="submit" (click)="onAdd()">
+      Add
+    </button>
+    <button mat-raised-button color="accent" type="button">Delete</button>
+    <button mat-raised-button color="warn" type="button">Clear</button>
+  </div>
+</form>

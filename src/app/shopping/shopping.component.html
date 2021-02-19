@@ -1,7 +1,11 @@
 <div class="row">
-  <div class="col-xs-10">
-    <app-shopping-edit></app-shopping-edit>
+  <div class="col-12">
+    <app-shopping-edit (ingredientAdded)="onAdd($event)"></app-shopping-edit>
     <hr />
-    <p>The list</p>
+    <mat-list role="list" *ngFor="let i of ingredients">
+      <mat-list-item role="listitem"
+        >{{ i.name }} ({{ i.amount }})</mat-list-item
+      >
+    </mat-list>
   </div>
 </div>

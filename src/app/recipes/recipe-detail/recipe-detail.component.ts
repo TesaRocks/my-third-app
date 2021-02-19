@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Recipe } from '../recipe.model';
 
 // interface Manage {
 //   value: string;
@@ -15,6 +16,8 @@ export class RecipeDetailComponent implements OnInit {
   //   { value: 'Delete Recipe' },
   // ];
   // selected = this.manage[0].value;
+
+  @Input() recipe: Recipe;
   constructor() {}
 
   ngOnInit(): void {}
