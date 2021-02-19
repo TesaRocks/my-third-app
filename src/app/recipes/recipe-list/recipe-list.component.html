@@ -1,0 +1,31 @@
+<div class="col-12">
+  <div class="example-button-row">
+    <button mat-raised-button color="warn">New Recipe</button>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-12">
+    <a *ngFor="let r of recipes" href="#" class="list-group-item clearfix">
+      <div style="float: left">
+        <h4
+          class="list-group-item list-group-item-action active"
+          aria-current="true"
+        >
+          {{ r.name }}
+        </h4>
+        <p class="list-group-item list-group-item-action">
+          {{ r.description }}
+        </p>
+      </div>
+      <span style="float: right">
+        <img
+          src="{{ r.imagePath }}"
+          alt="{{ r.name }}"
+          class="img-fluid"
+          style="max-height: 70px"
+      /></span>
+    </a>
+    <app-recipe-item></app-recipe-item>
+  </div>
+</div>
