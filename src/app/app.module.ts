@@ -18,6 +18,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { BasicDirective } from './shared/basic.directive';
+import { BestHighDirective } from './shared/best-high.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     RecipeItemComponent,
     ShoppingComponent,
     ShoppingEditComponent,
+    BasicDirective,
+    BestHighDirective,
   ],
   imports: [
     BrowserModule,
