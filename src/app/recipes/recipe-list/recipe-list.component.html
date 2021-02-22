@@ -1,16 +1,14 @@
-<div class="col-12">
+<div class="col-3">
   <div class="example-button-row">
-    <button mat-raised-button color="warn">New Recipe</button>
+    <button mat-raised-button color="warn" style="margin-bottom: 10px">
+      New Recipe
+    </button>
   </div>
 </div>
 <hr />
 
-<div class="row">
+<div class="row" style="margin-bottom: 250px">
   <div class="col-12">
-    <app-recipe-item
-      *ngFor="let r of recipes"
-      [recipe]="r"
-      (recipeChosen)="onSelect(r)"
-    ></app-recipe-item>
+    <app-recipe-item *ngFor="let r of recipes" [recipe]="r"></app-recipe-item>
   </div>
 </div>

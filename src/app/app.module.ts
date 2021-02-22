@@ -17,9 +17,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { BasicDirective } from './shared/basic.directive';
 import { BestHighDirective } from './shared/best-high.directive';
+import { ShoppingService } from './shopping/shopping.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,9 +43,8 @@ import { BestHighDirective } from './shared/best-high.directive';
     MatButtonModule,
     MatCardModule,
     MatListModule,
-    MatFormFieldModule,
   ],
-  providers: [],
+  providers: [ShoppingService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
