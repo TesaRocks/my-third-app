@@ -21,6 +21,7 @@ import { BasicDirective } from './shared/basic.directive';
 import { BestHighDirective } from './shared/best-high.directive';
 import { ShoppingService } from './shopping/shopping.service';
 import { RStartComponent } from './recipes/r-start/r-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { RStartComponent } from './recipes/r-start/r-start.component';
     BasicDirective,
     BestHighDirective,
     RStartComponent,
+    RecipeEditComponent,
   ],
   imports: [
     BrowserModule,
