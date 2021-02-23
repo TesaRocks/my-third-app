@@ -20,6 +20,7 @@ import { MatListModule } from '@angular/material/list';
 import { BasicDirective } from './shared/basic.directive';
 import { BestHighDirective } from './shared/best-high.directive';
 import { ShoppingService } from './shopping/shopping.service';
+import { RStartComponent } from './recipes/r-start/r-start.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { ShoppingService } from './shopping/shopping.service';
     ShoppingEditComponent,
     BasicDirective,
     BestHighDirective,
+    RStartComponent,
   ],
   imports: [
     BrowserModule,
