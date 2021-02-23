@@ -27,4 +27,7 @@ export class RecipeService {
   addToShoppig(ingred: Ingredient[]) {
     this.shoppingService.onAddIngredients(ingred);
   }
+  getRecipe(id: number) {
+    return this.recipes[id];
+  }
 }
