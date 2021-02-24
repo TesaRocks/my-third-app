@@ -25,13 +25,21 @@
         name="amount"
         ngModel
         required
+        [pattern]="'^[1-9]+[0-9]*$'"
       />
     </div>
 
     <div class="col-auto"></div>
   </div>
   <div class="example-button-row" style="margin-left: 20px; margin-top: 20px">
-    <button mat-raised-button color="primary" type="submit">Add</button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!f.valid"
+    >
+      {{ !editMode ? "Add" : "Update" }}
+    </button>
     <button mat-raised-button color="accent" type="button">Delete</button>
     <button mat-raised-button color="warn" type="button">Clear</button>
   </div>

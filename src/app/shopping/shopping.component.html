@@ -2,7 +2,11 @@
   <div class="col-12">
     <app-shopping-edit></app-shopping-edit>
     <hr />
-    <mat-list role="list" *ngFor="let i of ingredients">
+    <mat-list
+      role="list"
+      *ngFor="let i of ingredients; let ind = index"
+      (click)="onEdit(ind)"
+    >
       <mat-list-item role="listitem"
         >{{ i.name }} ({{ i.amount }})</mat-list-item
       >
