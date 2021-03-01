@@ -55,6 +55,7 @@
           class="row"
           *ngFor="let ctrl of controls; let i = index"
           [formGroupName]="i"
+          style="margin-top: 10px"
         >
           <div class="col-6">
             <input type="text" class="form-control" formControlName="name" />
@@ -68,6 +69,19 @@
           </div>
           <div class="col-4">
             <button mat-raised-button color="warn">X</button>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-12">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="onAddIng()"
+              type="button"
+            >
+              Add Ingredient
+            </button>
           </div>
         </div>
       </div>
