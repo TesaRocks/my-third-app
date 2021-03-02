@@ -22,6 +22,7 @@ import { BestHighDirective } from './shared/best-high.directive';
 import { ShoppingService } from './shopping/shopping.service';
 import { RStartComponent } from './recipes/r-start/r-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { RecipeService } from './recipes/recipe.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     MatCardModule,
     MatListModule,
   ],
-  providers: [ShoppingService],
+  providers: [ShoppingService, RecipeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
