@@ -6,11 +6,13 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { RecipesComponent } from './recipes/recipes.component';
 import { ShoppingComponent } from './shopping/shopping.component';
 import { RecipesResolverService } from './recipes/recipes-resolver.service';
+import { ShoppingResolverService } from './shopping/shopping-resolver.service';
 const routes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full' },
   {
     path: 'recipes',
     component: RecipesComponent,
+    //resolve: [RecipesResolverService],
     children: [
       { path: '', component: RStartComponent },
       { path: 'new', component: RecipeEditComponent },
@@ -27,7 +29,11 @@ const routes: Routes = [
       },
     ],
   },
-  { path: 'shopping', component: ShoppingComponent },
+  {
+    path: 'shopping',
+    component: ShoppingComponent,
+    resolve: [ShoppingResolverService],
+  },
 ];
 
 @NgModule({
