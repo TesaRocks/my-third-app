@@ -35,9 +35,14 @@
     <mat-label>Manage</mat-label>
     <mat-select>
       <mat-option></mat-option>
-      <mat-option *ngFor="let option of manage" [value]="option.value">{{
-        option.value
-      }}</mat-option>
+      <mat-option *ngFor="let option of manage" [value]="option.value">
+        <div *ngIf="option.value === 'Save Data'" (click)="onSaveData()">
+          {{ option.value }}
+        </div>
+        <div *ngIf="option.value === 'Fetch Data'" (click)="onFetchData()">
+          {{ option.value }}
+        </div>
+      </mat-option>
     </mat-select>
   </mat-form-field>
 </nav>
