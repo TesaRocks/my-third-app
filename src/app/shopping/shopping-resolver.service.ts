@@ -4,12 +4,14 @@ import {
   Resolve,
   RouterStateSnapshot,
 } from '@angular/router';
+import { Recipe } from '../recipes/recipe.model';
 import { DataStorageService } from '../shared/data-storage.service';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingService } from './shopping.service';
 
 @Injectable({ providedIn: 'root' })
-export class ShoppingResolverService implements Resolve<any> {
+export class ShoppingResolverService
+  implements Resolve<Ingredient[] | Recipe[]> {
   constructor(
     private dataStorageService: DataStorageService,
     private shoppingService: ShoppingService
