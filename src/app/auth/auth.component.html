@@ -5,6 +5,9 @@
         <h3>Sign In</h3>
       </div>
       <div class="card-body">
+        <div *ngIf="error" class="alert alert-danger">
+          <p>{{ error }}</p>
+        </div>
         <div *ngIf="isLoading" style="text-align: center">
           <app-loading-spinner></app-loading-spinner>
         </div>
