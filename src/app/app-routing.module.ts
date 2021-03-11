@@ -7,6 +7,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { ShoppingComponent } from './shopping/shopping.component';
 import { RecipesResolverService } from './recipes/recipes-resolver.service';
 import { ShoppingResolverService } from './shopping/shopping-resolver.service';
+import { AuthComponent } from './auth/auth.component';
 const routes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full' },
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
     path: 'shopping',
     component: ShoppingComponent,
     resolve: [ShoppingResolverService],
+  },
+  {
+    path: 'auth',
+    component: AuthComponent,
   },
 ];
 

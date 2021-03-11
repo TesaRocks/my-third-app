@@ -1,0 +1,61 @@
+<div class="container" style="margin-top: 50px">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      <div class="card-header">
+        <h3>Sign In</h3>
+      </div>
+      <div class="card-body">
+        <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="email"
+              ngModel
+              name="email"
+              required
+              email
+            />
+          </div>
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <input
+              type="password"
+              class="form-control"
+              placeholder="password"
+              ngModel
+              name="password"
+              required
+              minlength="6"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="submit"
+              [disabled]="!authForm.valid"
+              value="{{ isLoginMode ? 'Login' : 'Sign Up' }}"
+              class="btn float-right login_btn"
+              style="cursor: pointer"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="d-flex justify-content-center links">
+          {{ isLoginMode ? "Don't have an account?" : "Already a member?:"
+          }}<a
+            class="login_btn"
+            (click)="onSwithcMode()"
+            style="cursor: pointer"
+            >{{ isLoginMode ? "Sign Up" : "Login" }}</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
