@@ -10,6 +10,7 @@ import { AuthService } from './auth.service';
 export class AuthComponent {
   constructor(private authService: AuthService) {}
   isLoginMode = true;
+  isLoading = false;
   onSwithcMode() {
     this.isLoginMode = !this.isLoginMode;
   }
@@ -19,13 +20,16 @@ export class AuthComponent {
     }
     const email = form.value.email;
     const password = form.value.password;
+    this.isLoading = true;
     if (!this.isLoginMode) {
       this.authService.singUp(email, password).subscribe(
         (response) => {
           console.log(response);
+          this.isLoading = false;
         },
         (error) => {
           console.log(error);
+          this.isLoading = false;
         }
       );
     }
