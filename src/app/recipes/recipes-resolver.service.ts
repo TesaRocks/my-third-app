@@ -13,8 +13,11 @@ export class RecipesResolverService implements Resolve<Recipe[]> {
     private dataStorageService: DataStorageService,
     private recipeService: RecipeService
   ) {}
+
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     const recipes = this.recipeService.getRecipes();
+    console.log(recipes);
+
     if (recipes.length === 0) {
       return this.dataStorageService.fetchRecipes();
     } else {
