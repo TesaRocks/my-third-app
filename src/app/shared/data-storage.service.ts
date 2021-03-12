@@ -1,16 +1,19 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RecipeService } from '../recipes/recipe.service';
 import { Recipe } from '../recipes/recipe.model';
-import { map, tap } from 'rxjs/operators';
+import { exhaustMap, map, take, tap } from 'rxjs/operators';
 import { ShoppingService } from '../shopping/shopping.service';
 import { Ingredient } from './ingredient.model';
+import { AuthService } from '../auth/auth.service';
 @Injectable({ providedIn: 'root' })
 export class DataStorageService {
+  token = null;
   constructor(
     private http: HttpClient,
     private recipeService: RecipeService,
-    private shoppingService: ShoppingService
+    private shoppingService: ShoppingService,
+    private authService: AuthService
   ) {}
   storeRecipes() {
     const recipes = this.recipeService.getRecipes();
@@ -33,9 +36,15 @@ export class DataStorageService {
       });
   }
   fetchRecipes() {
+    // this.authService.user.pipe(take(1)).subscribe((user) => {
+    //   this.token = user.token;
+    // });
     this.http
       .get<Ingredient[]>(
         'https://my-third-app-d2559-default-rtdb.firebaseio.com/ingredients.json'
+        // {
+        //   params: new HttpParams().set('auth', this.token),
+        // }
       )
       .subscribe((ing) => {
         this.shoppingService.setIngredients(ing);
@@ -43,6 +52,9 @@ export class DataStorageService {
     return this.http
       .get<Recipe[]>(
         'https://my-third-app-d2559-default-rtdb.firebaseio.com/recipes.json'
+        // {
+        //   params: new HttpParams().set('auth', this.token),
+        // }
       )
       .pipe(
         map((recipes) => {

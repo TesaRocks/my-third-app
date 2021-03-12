@@ -8,6 +8,7 @@ import { Recipe } from './recipe.model';
 export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
   private recipes: Recipe[] = [];
+
   constructor(private shoppingService: ShoppingService) {}
   setRecipes(recipes: Recipe[]) {
     this.recipes = recipes;
