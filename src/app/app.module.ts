@@ -1,35 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { ShoppingService } from './shopping/shopping.service';
-import { RecipeService } from './recipes/recipe.service';
-import { AuthComponent } from './auth/auth.component';
-import { AuthInterceptorService } from './auth/auth-interceptor.service';
-import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingModule } from './shopping/shopping.module';
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core.module';
+import { AuthModule } from './auth/auth.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
-  declarations: [AppComponent, AuthComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent],
   imports: [
-    RecipesModule,
     ShoppingModule,
     BrowserModule,
     SharedModule,
     HttpClientModule,
     AppRoutingModule,
+    CoreModule,
+    AuthModule,
+    BrowserAnimationsModule,
   ],
-  providers: [
-    ShoppingService,
-    RecipeService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptorService,
-      multi: true,
-    },
-  ],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

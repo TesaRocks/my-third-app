@@ -9,7 +9,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [LoadingSpinnerComponent, BasicDirective, BestHighDirective],
@@ -22,7 +21,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSelectModule,
     MatButtonModule,
     MatListModule,
-    BrowserAnimationsModule,
   ],
   exports: [
     LoadingSpinnerComponent,
@@ -36,7 +34,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSelectModule,
     MatButtonModule,
     MatListModule,
-    BrowserAnimationsModule,
   ],
 })
 export class SharedModule {}
