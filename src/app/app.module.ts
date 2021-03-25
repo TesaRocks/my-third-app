@@ -6,8 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
-import { ShoppingComponent } from './shopping/shopping.component';
-import { ShoppingEditComponent } from './shopping/shopping-edit/shopping-edit.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
@@ -20,19 +18,22 @@ import { AuthComponent } from './auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { RecipesModule } from './recipes/recipes.module';
+import { ShoppingModule } from './shopping/shopping.module';
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
     HeaderComponent,
-    ShoppingComponent,
-    ShoppingEditComponent,
     BasicDirective,
     BestHighDirective,
     LoadingSpinnerComponent,
   ],
   imports: [
+    RecipesModule,
+    ShoppingModule,
     BrowserModule,
+    MatCardModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -42,7 +43,6 @@ import { RecipesModule } from './recipes/recipes.module';
     MatSelectModule,
     MatButtonModule,
     MatListModule,
-    RecipesModule,
   ],
   providers: [
     ShoppingService,
