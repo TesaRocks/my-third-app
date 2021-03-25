@@ -1,48 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatSelectModule } from '@angular/material/select';
-import { MatButtonModule } from '@angular/material/button';
-import { MatListModule } from '@angular/material/list';
-import { BasicDirective } from './shared/basic.directive';
-import { BestHighDirective } from './shared/best-high.directive';
 import { ShoppingService } from './shopping/shopping.service';
 import { RecipeService } from './recipes/recipe.service';
 import { AuthComponent } from './auth/auth.component';
-import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingModule } from './shopping/shopping.module';
-import { MatCardModule } from '@angular/material/card';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
-  declarations: [
-    AppComponent,
-    AuthComponent,
-    HeaderComponent,
-    BasicDirective,
-    BestHighDirective,
-    LoadingSpinnerComponent,
-  ],
+  declarations: [AppComponent, AuthComponent, HeaderComponent],
   imports: [
     RecipesModule,
     ShoppingModule,
     BrowserModule,
-    MatCardModule,
-    FormsModule,
-    ReactiveFormsModule,
+    SharedModule,
     HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatGridListModule,
-    MatSelectModule,
-    MatButtonModule,
-    MatListModule,
   ],
   providers: [
     ShoppingService,

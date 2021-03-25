@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+//import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ShoppingComponent } from './shopping.component';
 import { ShoppingResolverService } from './shopping-resolver.service';
-
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [ShoppingComponent, ShoppingEditComponent],
   imports: [
-    CommonModule,
-    FormsModule,
+    SharedModule,
     RouterModule.forChild([
       {
         path: 'shopping',
