@@ -4,7 +4,7 @@
     <hr />
     <mat-list
       role="list"
-      *ngFor="let i of ingredients; let ind = index"
+      *ngFor="let i of (ingredients | async).ingredients; let ind = index"
       (click)="onEdit(ind)"
     >
       <mat-list-item role="listitem" style="cursor: pointer"
