@@ -8,12 +8,12 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
-import { shoppingReducer } from './shopping/store/shopping.reducer';
+import * as fromApp from './store/app.reducer';
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ shopping: shoppingReducer }),
+    StoreModule.forRoot(fromApp.appReducer),
     SharedModule,
     HttpClientModule,
     AppRoutingModule,

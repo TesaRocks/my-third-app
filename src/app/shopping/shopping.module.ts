@@ -3,7 +3,7 @@ import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
 //import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ShoppingComponent } from './shopping.component';
-import { ShoppingResolverService } from './shopping-resolver.service';
+//import { ShoppingResolverService } from './shopping-resolver.service';
 import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [ShoppingComponent, ShoppingEditComponent],
@@ -13,7 +13,7 @@ import { SharedModule } from '../shared/shared.module';
       {
         path: '',
         component: ShoppingComponent,
-        resolve: [ShoppingResolverService],
+        // resolve: [ShoppingResolverService],
       },
     ]),
   ],

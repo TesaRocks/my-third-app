@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import { ShoppingService } from '../shopping.service';
 import * as ShoppingActions from '../store/shopping.actions';
-import * as FromShopping from '../store/shopping.reducer';
+import * as fromApp from '../../store/app.reducer';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -19,7 +19,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   itemToEdit: Ingredient;
   constructor(
     private shoppingService: ShoppingService,
-    private store: Store<FromShopping.AppState>
+    private store: Store<fromApp.AppState>
   ) {}
 
   ngOnInit(): void {
